@@ -26,16 +26,18 @@ Current fixed:
 * MyMechanicalConnectionBlockBase(SafetyDetach)
 * MyPistonBase(MaxVelocity, MaxLimit, MinLimit, MaxImpulseAxis, MaxImpulseNonAxis)
 * MyMotorStator(Torque, BrakingTorque, TargetVelocity)
+* SafeZone(Box size)(modified client will display the fake border until rejoin to server)
 
 # TODO
 * Projector
 * Antenna
-* SafeZone
+* Beacon
 * Sound
 * Light
+* Wheel
 
 # Note
-The game will automatically correct the wrong data when loading world. If the player created illegal data, Those data will be cleared after the server restarts(to nearest legal value). No more step need to be done, just install this plugin and restart server.
+The game will automatically correct the wrong data when loading world. If the player created illegal data, Those data will be cleared after the server restarts(to nearest legal value). So no more step need to be done, just install this plugin and restart server.
 
 # License
 Apache 2.0

@@ -10,6 +10,8 @@ namespace DataValidateFix
 {
     internal static class ReflectionExtensions
     {
+        internal delegate void ActionRef<T>(ref T item);
+
         internal static FieldInfo GetPrivateFieldInfo(this Type type, string fieldName) =>
             type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance) ??
             throw new MissingFieldException(type.Name, fieldName);

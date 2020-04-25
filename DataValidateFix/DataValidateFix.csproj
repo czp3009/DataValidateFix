@@ -51,6 +51,10 @@
             <HintPath>$(SolutionDir)\GameBinaries\VRage.Math.dll</HintPath>
             <Private>False</Private>
         </Reference>
+        <Reference Include="SpaceEngineers.ObjectBuilders">
+            <HintPath>$(SolutionDir)\GameBinaries\SpaceEngineers.ObjectBuilders.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
         <Reference Include="Sandbox.Game">
             <HintPath>$(SolutionDir)\GameBinaries\Sandbox.Game.dll</HintPath>
             <Private>False</Private>
@@ -73,6 +77,7 @@
         <Compile Include="MyMotorStatorPatch.cs" />
         <Compile Include="MyOreDetectorPatch.cs" />
         <Compile Include="MyPistonBasePatch.cs" />
+        <Compile Include="MySafeZonePatch.cs" />
         <Compile Include="MySensorBlockPatch.cs" />
         <Compile Include="MyWarheadPatch.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
