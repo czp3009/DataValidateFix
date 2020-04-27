@@ -1,5 +1,5 @@
 ﻿# DataValidateFix
-A torch plugin which fix several data validate issue for SpaceEngineers server.
+A [Torch](https://torchapi.net/) plugin which fix several data validate issue for [SpaceEngineers](https://store.steampowered.com/app/244850/Space_Engineers/) server.
 
 The SpaceEngineers server NOT validate some important two-way sync variable received from client.
 
@@ -27,6 +27,7 @@ Current fixed:
 * MyPistonBase(MaxVelocity, MaxLimit, MinLimit, MaxImpulseAxis, MaxImpulseNonAxis)
 * MyMotorStator(Torque, BrakingTorque, TargetVelocity)
 * SafeZone(Box size)(modified client will display the fake border until rejoin to server)
+* MyMotorSuspension(MaxSteerAngle, Power, Strength, Height, Friction, SpeedLimit, PropulsionOverride, SteeringOverride)
 
 # TODO
 * Projector
@@ -34,7 +35,6 @@ Current fixed:
 * Beacon
 * Sound
 * Light
-* Wheel
 
 # Note
 The game will automatically correct the wrong data when loading world. If the player created illegal data, Those data will be cleared after the server restarts(to nearest legal value). So no more step need to be done, just install this plugin and restart server.
