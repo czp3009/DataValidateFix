@@ -28,6 +28,7 @@ Current fixed:
 * MyMotorStator(Torque, BrakingTorque, TargetVelocity)
 * SafeZone(Box size)(modified client will display the fake border until rejoin to server)
 * MyMotorSuspension(MaxSteerAngle, Power, Strength, Height, Friction, SpeedLimit, PropulsionOverride, SteeringOverride)
+* Thrust(ThrustOverride)
 
 # TODO
 * Projector
@@ -35,6 +36,7 @@ Current fixed:
 * Beacon
 * Sound
 * Light
+* JumpDrive
 
 # Note
 The game will automatically correct the wrong data when loading world. If the player created illegal data, Those data will be cleared after the server restarts(to nearest legal value). So no more step need to be done, just install this plugin and restart server.

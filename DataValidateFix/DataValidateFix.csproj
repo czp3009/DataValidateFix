@@ -80,6 +80,7 @@
         <Compile Include="MyPistonBasePatch.cs" />
         <Compile Include="MySafeZonePatch.cs" />
         <Compile Include="MySensorBlockPatch.cs" />
+        <Compile Include="MyThrustPatch.cs" />
         <Compile Include="MyWarheadPatch.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="ReflectionExtensions.cs" />
