@@ -19,6 +19,7 @@ Player can get as many grids' position as he want by increase the `MaxRange` in 
 This plugin add extra validate logic in server to void the problem above.
 
 Current fixed:
+
 * MySensorBlock(LeftExtend, RightExtend, BottomExtend, TopExtend, BackExtend, FrontExtend)
 
 * MyWarhead(Countdown)
@@ -40,6 +41,8 @@ Current fixed:
 * MyThrust(ThrustOverride)
 
 * MyJumpDrive(JumpDistanceRatio)
+
+* MyGyro(OverrideVelocity)
 
 # TODO
 * Projector

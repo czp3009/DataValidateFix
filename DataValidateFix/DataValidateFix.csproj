@@ -51,6 +51,10 @@
             <HintPath>$(SolutionDir)\GameBinaries\VRage.Math.dll</HintPath>
             <Private>False</Private>
         </Reference>
+        <Reference Include="VRage.Library">
+            <HintPath>$(SolutionDir)\GameBinaries\VRage.Library.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
         <Reference Include="SpaceEngineers.ObjectBuilders">
             <HintPath>$(SolutionDir)\GameBinaries\SpaceEngineers.ObjectBuilders.dll</HintPath>
             <Private>False</Private>
@@ -72,6 +76,8 @@
         <Compile Include="DataValidateFixPlugin.cs" />
         <Compile Include="LogExtensions.cs" />
         <Compile Include="MathExtensions.cs" />
+        <Compile Include="MyBeaconPatch.cs" />
+        <Compile Include="MyGyroPatch.cs" />
         <Compile Include="MyJumpDrivePatch.cs" />
         <Compile Include="MyLargeTurretBasePatch.cs" />
         <Compile Include="MyMechanicalConnectionBlockBasePatch.cs" />
