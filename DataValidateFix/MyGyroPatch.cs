@@ -23,55 +23,10 @@ namespace DataValidateFix
                 ? MyGridPhysics.GetSmallShipMaxAngularVelocity()
                 : MyGridPhysics.GetLargeShipMaxAngularVelocity();
 
-            _gyroOverrideVelocity.GetSync<Vector3>(__instance).TypedValueChangedFirst(sync =>
-            {
-                var value = sync.Value;
-                var targetX = value.X;
-                var targetY = value.Y;
-                var targetZ = value.Z;
-                var invalid = false;
-
-                if (value.X < -max || value.X > max)
-                {
-                    targetX = MathHelper.Clamp(value.X, -max, max);
-                    invalid = true;
-                }
-
-                if (value.Y < -max || value.Y > max)
-                {
-                    targetY = MathHelper.Clamp(value.Y, -max, max);
-                    invalid = true;
-                }
-
-                if (value.Z < -max || value.Z > max)
-                {
-                    targetZ = MathHelper.Clamp(value.Z, -max, max);
-                    invalid = true;
-                }
-
-                if (float.IsNaN(value.X))
-                {
-                    targetX = 0;
-                    invalid = true;
-                }
-
-                if (float.IsNaN(value.Y))
-                {
-                    targetY = 0;
-                    invalid = true;
-                }
-
-                if (float.IsNaN(value.Z))
-                {
-                    targetZ = 0;
-                    invalid = true;
-                }
-
-                if (invalid)
-                {
-                    sync.Value = new Vector3(targetX, targetY, targetZ);
-                }
-            });
+            _gyroOverrideVelocity.GetSync<Vector3>(__instance).ValueChangedInRange(
+                new Vector3(-max, -max, -max),
+                new Vector3(max, max, max)
+            );
         }
 
         public static void Patch(PatchContext patchContext)

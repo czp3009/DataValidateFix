@@ -5,6 +5,7 @@ using Sandbox.Game.Entities;
 using Torch.Managers.PatchManager;
 using VRage.Game;
 using VRage.Sync;
+using VRageMath;
 
 namespace DataValidateFix
 {
@@ -57,7 +58,22 @@ namespace DataValidateFix
             {
                 var value = it.Value;
                 if (value.CompareTo(max) > 0) sync.Value = max;
+                //NaN less than any number
                 else if (value.CompareTo(min) < 0) sync.Value = min;
+            });
+        }
+
+        internal static void ValueChangedInRange(
+            this Sync<Vector3, SyncDirection.BothWays> sync,
+            Vector3 min, Vector3 max)
+        {
+            sync.TypedValueChangedFirst(it =>
+            {
+                var value = it.Value;
+                if (!value.IsInsideInclusive(ref min, ref max))
+                {
+                    it.Value = value.Clamp(ref min, ref max);
+                }
             });
         }
 

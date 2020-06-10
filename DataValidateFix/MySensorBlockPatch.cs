@@ -16,28 +16,14 @@ namespace DataValidateFix
         // ReSharper disable once InconsistentNaming
         private static void InitPatch(MySensorBlock __instance)
         {
-            var fieldMinMin = new Vector3(-__instance.MaxRange);
-            var fieldMinMax = new Vector3(-0.1f);
-            var fieldMaxMin = new Vector3(0.1f);
-            var fieldMaxMax = new Vector3(__instance.MaxRange);
-
-            _fieldMin.GetSync<Vector3>(__instance).TypedValueChangedFirst(sync =>
-            {
-                var fieldMin = sync.Value;
-                if (!fieldMin.IsInsideInclusive(ref fieldMinMin, ref fieldMinMax))
-                {
-                    __instance.FieldMin = fieldMin.Clamp(ref fieldMinMin, ref fieldMinMax);
-                }
-            });
-
-            _fieldMax.GetSync<Vector3>(__instance).TypedValueChangedFirst(sync =>
-            {
-                var fieldMax = sync.Value;
-                if (!fieldMax.IsInsideInclusive(ref fieldMaxMin, ref fieldMaxMax))
-                {
-                    __instance.FieldMax = fieldMax.Clamp(ref fieldMaxMin, ref fieldMaxMax);
-                }
-            });
+            _fieldMin.GetSync<Vector3>(__instance).ValueChangedInRange(
+                new Vector3(-__instance.MaxRange),
+                new Vector3(-0.1f)
+            );
+            _fieldMax.GetSync<Vector3>(__instance).ValueChangedInRange(
+                new Vector3(0.1f),
+                new Vector3(__instance.MaxRange)
+            );
         }
 
         public static void Patch(PatchContext patchContext)

@@ -12,13 +12,17 @@ namespace DataValidateFix
     public static class MySafeZonePatch
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-        private static readonly Vector3 MinSize = new Vector3(MySafeZone.MIN_RADIUS * 2);
-        private static readonly Vector3 MaxSize = new Vector3(MySafeZone.MAX_RADIUS * 2);
+        private static Vector3 _minSize = new Vector3(MySafeZone.MIN_RADIUS * 2);
+        private static Vector3 _maxSize = new Vector3(MySafeZone.MAX_RADIUS * 2);
 
         // ReSharper disable once InconsistentNaming
         private static void InitInternalPatch(ref MyObjectBuilder_SafeZone ob)
         {
-            ob.Size = Vector3.Clamp(ob.Size, MinSize, MaxSize);
+            var size = ob.Size;
+            if (!size.IsInsideInclusive(ref _minSize, ref _maxSize))
+            {
+                ob.Size = size.Clamp(ref _minSize, ref _maxSize);
+            }
         }
 
         public static void Patch(PatchContext patchContext)

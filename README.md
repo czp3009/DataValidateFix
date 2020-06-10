@@ -18,7 +18,7 @@ Player can get as many grids' position as he want by increase the `MaxRange` in 
 # Feature
 This plugin add extra validate logic in server to void the problem above.
 
-Current fixed:
+Current fixed block:
 
 * MySensorBlock(LeftExtend, RightExtend, BottomExtend, TopExtend, BackExtend, FrontExtend)
 
