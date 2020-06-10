@@ -15,11 +15,9 @@ Use ProgramBlock to get data from SensorBlock with [`Sandbox.ModAPI.Ingame.IMySe
 
 Player can get as many grids' position as he want by increase the `MaxRange` in XML.
 
-# Feature
 This plugin add extra validate logic in server to void the problem above.
 
-Current fixed block:
-
+# Current fixed block
 * MySensorBlock(LeftExtend, RightExtend, BottomExtend, TopExtend, BackExtend, FrontExtend)
 
 * MyWarhead(Countdown)
@@ -51,8 +49,19 @@ Current fixed block:
 * Sound
 * Light
 
+# Script fix
+If script in ProgramBlock try to pass float.NaN to property of those fixed block, value of that property will be reset to minimum legal value.
+
+For example, player run such code in game:
+
+```c#
+(GridTerminalSystem.GetBlockWithName("GyroName") as IMyGyro).Pitch = float.NaN;
+```
+
+`Pitch` will be reset to `-30`(depend on BlockDefinition in server side).
+
 # Note
-The game will automatically correct the wrong data when loading world. If the player created illegal data, Those data will be cleared after the server restarts(to nearest legal value). So no more step need to be done, just install this plugin and restart server.
+The game will automatically correct the wrong data when loading world. If the player created illegal data before, Those data will be cleared after the server restarts(to nearest legal value). So no more step need to be done, just install this plugin and restart server.
 
 # License
 Apache 2.0
