@@ -80,11 +80,13 @@
         <Compile Include="MyGyroPatch.cs" />
         <Compile Include="MyJumpDrivePatch.cs" />
         <Compile Include="MyLargeTurretBasePatch.cs" />
+        <Compile Include="MyLaserAntennaPatch.cs" />
         <Compile Include="MyMechanicalConnectionBlockBasePatch.cs" />
         <Compile Include="MyMotorStatorPatch.cs" />
         <Compile Include="MyMotorSuspensionPatch.cs" />
         <Compile Include="MyOreDetectorPatch.cs" />
         <Compile Include="MyPistonBasePatch.cs" />
+        <Compile Include="MyRadioAntennaPatch.cs" />
         <Compile Include="MySafeZonePatch.cs" />
         <Compile Include="MySensorBlockPatch.cs" />
         <Compile Include="MyThrustPatch.cs" />

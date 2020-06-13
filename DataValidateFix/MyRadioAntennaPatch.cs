@@ -7,15 +7,15 @@ using Torch.Managers.PatchManager;
 namespace DataValidateFix
 {
     [PatchShim]
-    public static class MyBeaconPatch
+    public static class MyRadioAntennaPatch
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
         private static FieldInfo _radius;
 
         // ReSharper disable once InconsistentNaming
-        private static void InitPatch(MyBeacon __instance)
+        private static void InitPatch(MyRadioAntenna __instance)
         {
-            var definition = (MyBeaconDefinition) __instance.BlockDefinition;
+            var definition = (MyRadioAntennaDefinition) __instance.BlockDefinition;
             _radius.GetSync<float>(__instance).ValueChangedInRange(1, definition.MaxBroadcastRadius);
         }
 
@@ -23,8 +23,8 @@ namespace DataValidateFix
         {
             Log.TryPatching(() =>
             {
-                patchContext.PatchInit<MyBeacon>(InitPatch);
-                _radius = typeof(MyBeacon).GetPrivateFieldInfo("m_radius");
+                patchContext.PatchInit<MyRadioAntenna>(InitPatch);
+                _radius = typeof(MyRadioAntenna).GetPrivateFieldInfo("m_radius");
             });
         }
     }
