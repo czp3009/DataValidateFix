@@ -42,10 +42,11 @@ This plugin add extra validate logic in server to void the problem above.
 
 * MyGyro(OverrideVelocity)
 
+* Beacon(Radius)
+
 # TODO
 * Projector
 * Antenna
-* Beacon
 * Sound
 * Light
 
