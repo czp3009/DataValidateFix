@@ -81,6 +81,7 @@
         <Compile Include="MyJumpDrivePatch.cs" />
         <Compile Include="MyLargeTurretBasePatch.cs" />
         <Compile Include="MyLaserAntennaPatch.cs" />
+        <Compile Include="MyLightingBlockPatch.cs" />
         <Compile Include="MyMechanicalConnectionBlockBasePatch.cs" />
         <Compile Include="MyMotorStatorPatch.cs" />
         <Compile Include="MyMotorSuspensionPatch.cs" />

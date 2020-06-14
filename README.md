@@ -46,10 +46,12 @@ This plugin add extra validate logic in server to void the problem above.
 
 * MyRadioAntenna(Radius)
 
+* MyLightingBlock(Radius, Falloff, BlinkInterval, BlinkLength, BlinkOffset, Intensity, LightOffset)
+
 # TODO
+* MyLaserAntenna(this patch cause crash, i don't know why)
 * Projector
-* Sound
-* Light
+* Sound(i don't find the block class)
 
 # Script fix
 If script in ProgramBlock try to pass float.NaN to property of those fixed block, value of that property will be reset to minimum legal value.
