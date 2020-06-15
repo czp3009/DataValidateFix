@@ -87,6 +87,7 @@
         <Compile Include="MyMotorSuspensionPatch.cs" />
         <Compile Include="MyOreDetectorPatch.cs" />
         <Compile Include="MyPistonBasePatch.cs" />
+        <Compile Include="MyProjectorBasePatch.cs" />
         <Compile Include="MyRadioAntennaPatch.cs" />
         <Compile Include="MySafeZonePatch.cs" />
         <Compile Include="MySensorBlockPatch.cs" />

@@ -48,9 +48,8 @@ This plugin add extra validate logic in server to void the problem above.
 
 * MyLightingBlock(Radius, Falloff, BlinkInterval, BlinkLength, BlinkOffset, Intensity, LightOffset)
 
-# TODO
+# TODO blocks
 * MyLaserAntenna(this patch cause crash, i don't know why)
-* Projector
 * Sound(i don't find the block class)
 
 # Script fix
@@ -63,6 +62,15 @@ For example, player run such code in game:
 ```
 
 `Pitch` will be reset to `-30`(depend on BlockDefinition in server side).
+
+# Projector fix
+If player use a modified blueprint in Projector, items in some block inventory will NOT be clear. Player can create items for free.
+
+This plugin current fix(If you find more block in blueprint can use this bug, please tell me):
+
+* OxygenGenerator(All ice in inventory will be clear)
+
+* JumpDrive(Stored power will be reset to zero)
 
 # Note
 The game will automatically correct the wrong data when loading world. If the player created illegal data before, Those data will be cleared after the server restarts(to nearest legal value). So no more step need to be done, just install this plugin and restart server.
