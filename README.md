@@ -72,6 +72,8 @@ This plugin current fix(If you find more block in blueprint can use this bug, pl
 
 * JumpDrive(Stored power will be reset to zero)
 
+* GatlingGun, MissileLauncher(All ammo in inventory will be clear)
+
 # Note
 The game will automatically correct the wrong data when loading world. If the player created illegal data before, Those data will be cleared after the server restarts(to nearest legal value). So no more step need to be done, just install this plugin and restart server.
 

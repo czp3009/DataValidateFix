@@ -25,6 +25,15 @@ namespace DataValidateFix
                         case MyObjectBuilder_OxygenGenerator oxygenGenerator:
                             oxygenGenerator.Inventory = null;
                             break;
+                        case MyObjectBuilder_TurretBase turretBase:
+                            turretBase.Inventory = null;
+                            break;
+                        case MyObjectBuilder_SmallGatlingGun gatlingGun:
+                            gatlingGun.Inventory = null;
+                            break;
+                        case MyObjectBuilder_SmallMissileLauncher missileLauncher:
+                            missileLauncher.Inventory = null;
+                            break;
                         case MyObjectBuilder_JumpDrive jumpDrive:
                             jumpDrive.StoredPower = 0;
                             break;
