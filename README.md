@@ -64,15 +64,17 @@ For example, player run such code in game:
 `Pitch` will be reset to `-30`(depend on BlockDefinition in server side).
 
 # Projector fix
-If player use a modified blueprint in Projector, items in some block inventory will NOT be clear. Player can create items for free.
+~~If player use a modified blueprint in Projector, items in some block inventory will NOT be clear. Player can create items for free.~~
 
-This plugin current fix(If you find more block in blueprint can use this bug, please tell me):
+~~This plugin current fix(If you find more block in blueprint can use this bug, please tell me):~~
 
-* OxygenGenerator(All ice in inventory will be clear)
+~~* OxygenGenerator(All ice in inventory will be clear)~~
 
-* JumpDrive(Stored power will be reset to zero)
+~~* JumpDrive(Stored power will be reset to zero)~~
 
-* GatlingGun, MissileLauncher(All ammo in inventory will be clear)
+~~* GatlingGun, MissileLauncher(All ammo in inventory will be clear)~~
+
+(Keen fixed it)
 
 # Note
 The game will automatically correct the wrong data when loading world. If the player created illegal data before, Those data will be cleared after the server restarts(to nearest legal value). So no more step need to be done, just install this plugin and restart server.

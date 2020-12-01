@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0"?>
 
-<PluginManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<PluginManifest>
     <Name>DataValidateFix</Name>
     <Guid>D4948C7D-5363-469C-A24A-48D64ED02073</Guid>
     <Repository>https://github.com/czp3009/DataValidateFix</Repository>
-    <Version>v1.0.1.3</Version>
+    <Version>v1.0.2.0</Version>
 </PluginManifest>
