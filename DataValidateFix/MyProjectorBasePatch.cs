@@ -22,17 +22,19 @@ namespace DataValidateFix
                 {
                     switch (it)
                     {
+                        //note: inventory can be null in proto
+                        //note: don't set inventory to null since other plugin may not check it
                         case MyObjectBuilder_OxygenGenerator oxygenGenerator:
-                            oxygenGenerator.Inventory = null;
+                            oxygenGenerator.Inventory?.Clear();
                             break;
                         case MyObjectBuilder_TurretBase turretBase:
-                            turretBase.Inventory = null;
+                            turretBase.Inventory?.Clear();
                             break;
                         case MyObjectBuilder_SmallGatlingGun gatlingGun:
-                            gatlingGun.Inventory = null;
+                            gatlingGun.Inventory?.Clear();
                             break;
                         case MyObjectBuilder_SmallMissileLauncher missileLauncher:
-                            missileLauncher.Inventory = null;
+                            missileLauncher.Inventory?.Clear();
                             break;
                         case MyObjectBuilder_JumpDrive jumpDrive:
                             jumpDrive.StoredPower = 0;
