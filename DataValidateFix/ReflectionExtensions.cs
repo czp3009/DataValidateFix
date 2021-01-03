@@ -11,7 +11,11 @@ namespace DataValidateFix
 {
     internal static class ReflectionExtensions
     {
-        internal delegate void ActionRef<T>(ref T item);
+        private static readonly FieldInfo ValueChangedEventInfo = typeof(SyncBase).GetPrivateFieldInfo("ValueChanged");
+
+        internal static PropertyInfo GetPublicPropertyInfo(this Type type, string propertyName) =>
+            type.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance) ??
+            throw new MissingMemberException(type.Name, propertyName);
 
         internal static FieldInfo GetPrivateFieldInfo(this Type type, string fieldName) =>
             type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance) ??
@@ -36,8 +40,6 @@ namespace DataValidateFix
         {
             sync.ValueChanged += syncBase => action((Sync<T, SyncDirection.BothWays>) syncBase);
         }
-
-        private static readonly FieldInfo ValueChangedEventInfo = typeof(SyncBase).GetPrivateFieldInfo("ValueChanged");
 
         internal static void TypedValueChangedFirst<T>(
             this Sync<T, SyncDirection.BothWays> sync,

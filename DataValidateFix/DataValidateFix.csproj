@@ -63,6 +63,10 @@
             <HintPath>$(SolutionDir)\GameBinaries\Sandbox.Game.dll</HintPath>
             <Private>False</Private>
         </Reference>
+        <Reference Include="Sandbox.ModAPI.Ingame">
+            <HintPath>$(SolutionDir)\GameBinaries\Sandbox.Common.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
         <Reference Include="Torch">
             <HintPath>$(SolutionDir)\TorchBinaries\Torch.dll</HintPath>
             <Private>False</Private>
@@ -73,9 +77,11 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="ActionRefs.cs"/>
         <Compile Include="DataValidateFixPlugin.cs" />
         <Compile Include="LogExtensions.cs" />
         <Compile Include="MathExtensions.cs" />
+        <Compile Include="MyBatteryBlockPatch.cs"/>
         <Compile Include="MyBeaconPatch.cs" />
         <Compile Include="MyGyroPatch.cs" />
         <Compile Include="MyJumpDrivePatch.cs" />
