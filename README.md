@@ -53,7 +53,10 @@ This plugin add extra validate logic in server to void the problem above.
 * Sound(i don't find the block class)
 
 # Script fix
-If script in ProgramBlock try to pass float.NaN to property of those fixed block, value of that property will be reset to minimum legal value.
+## NaN value
+
+If script in ProgramBlock try to pass float.NaN to property of those fixed block, value of that property will be reset
+to minimum legal value.
 
 For example, player run such code in game:
 
@@ -63,10 +66,24 @@ For example, player run such code in game:
 
 `Pitch` will be reset to `-30`(depend on BlockDefinition in server side).
 
-# Projector fix
-~~If player use a modified blueprint in Projector, items in some block inventory will NOT be clear. Player can create items for free.~~
+## Enum out of range
 
-~~This plugin current fix(If you find more block in blueprint can use this bug, please tell me):~~
+Enums in c# are not checked, player can crash server by in-game script:
+
+```c#
+(GridTerminalSystem.GetBlockWithName("BatteryName") as IMyBatteryBlock).ChargeMode = (ChargeMode) 3;
+```
+
+With this plugin, `IMyBattertyBlock.ChargeMode` will not be changed if the Enum underlying value(max to 2) not valid.
+
+For more Enum in game please create an issue on Github to tell me.
+
+# Projector fix
+
+~~If player use a modified blueprint in Projector, items in some block inventory will NOT be clear. Player can create
+items for free.~~
+
+~~This plugin current fix(If you find more block in blueprint can use this bug, please create an issue on Github):~~
 
 ~~* OxygenGenerator(All ice in inventory will be clear)~~
 
