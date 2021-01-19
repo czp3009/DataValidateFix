@@ -7,7 +7,7 @@ using Torch.Managers.PatchManager;
 namespace DataValidateFix
 {
     [PatchShim]
-    public class MyBatteryBlockPatch
+    public static class MyBatteryBlockPatch
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
