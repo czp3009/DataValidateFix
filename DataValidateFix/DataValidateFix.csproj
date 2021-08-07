@@ -33,10 +33,12 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Xml" />
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="PresentationCore"/>
+        <Reference Include="PresentationFramework"/>
     </ItemGroup>
     <ItemGroup>
         <Reference Include="VRage">
@@ -69,6 +71,10 @@
         </Reference>
         <Reference Include="Torch">
             <HintPath>$(SolutionDir)\TorchBinaries\Torch.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference Include="Torch.API">
+            <HintPath>$(SolutionDir)\TorchBinaries\Torch.API.dll</HintPath>
             <Private>False</Private>
         </Reference>
         <Reference Include="NLog">

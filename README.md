@@ -1,4 +1,6 @@
 ﻿# DataValidateFix
+**Deprecated!** Keen fixed all exploits.
+
 A [Torch](https://torchapi.net/) plugin which fix several data validate issue for [SpaceEngineers](https://store.steampowered.com/app/244850/Space_Engineers/) server.
 
 The SpaceEngineers server NOT validate some important two-way sync variable received from client.
